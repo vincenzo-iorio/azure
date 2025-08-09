@@ -41,3 +41,6 @@
 ## Get Kubeconfig
    terraform output -raw kube_config > ~/.kube/config<br>
    chmod 600 ~/.kube/config<br>
+## Get Kubeconfig with AD
+   az aks list --query "[].{rg:resourceGroup, name:name}" -o table
+   az aks get-credentials   --resource-group rg-up-bee   --name cluster-verified-pug   --admin
